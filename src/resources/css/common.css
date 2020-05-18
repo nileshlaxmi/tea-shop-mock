@@ -1,0 +1,18 @@
+.error-box-wrap {
+  display: flex;
+  align-items: baseline;
+  word-wrap: break-word;
+  color: #c12335;
+  margin-left: 2px;
+  top: 2px;
+  position: relative;
+  font-size: 14px;
+}
+.error-box-wrap .error-box-message {
+  width: 50%;
+}
+.error-box-wrap .error-box-icon {
+  top: 5px;
+  position: relative;
+  height: 14px;
+}
