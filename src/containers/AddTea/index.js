@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import errorMessages from "../../constant/error";
 import successMessages from "../../constant/success";
 import { addTeaItem } from "../../store/add/action";
+import ImageUpload from "../Image";
 
 class AddItem extends Component {
   constructor(props) {
@@ -62,7 +63,7 @@ class AddItem extends Component {
   };
 
   render() {
-    const { errors } = this.state;
+    const { errors, url } = this.state;
     return (
       <div>
         <p>Add Item</p>
@@ -92,6 +93,18 @@ class AddItem extends Component {
           }}
           error={errors && errors["price"]}
         />
+        <div className="general">
+          <div className="box-padding">
+            <ImageUpload
+              isDisabled="Yes"
+              type="image"
+              fileUrl={url}
+              getFile={(imgUrl) => {
+                this.handleChange("url", imgUrl);
+              }}
+            />
+          </div>
+        </div>
         <ButtonBox type="submit" onClick={this.handleClick} />
       </div>
     );
