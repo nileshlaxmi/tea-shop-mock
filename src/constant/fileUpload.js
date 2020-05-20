@@ -11,14 +11,14 @@ export const uploadedImageSize = {
 };
 
 export const allFileTypes = [
-  'pdf',
-  'xls',
-  'png',
-  'jpg',
-  'jpeg',
-  'xlsx',
-  'xps',
-  'doc',
-  'docx',
+  "pdf",
+  "xls",
+  "png",
+  "jpg",
+  "jpeg",
+  "xlsx",
+  "xps",
+  "doc",
+  "docx",
 ];
-export const imageTypes = ['png', 'jpg', 'jpeg'];
+export const imageTypes = ["png", "jpg", "jpeg", "gif"];

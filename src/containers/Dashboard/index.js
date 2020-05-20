@@ -1,11 +1,14 @@
-import React from 'react';
-import AddItem from '../AddTea';
+import React from "react";
+import AddItem from "../AddTea";
+import TeaList from "../TeaList";
 
 const Dashboard = () => {
   return (
-    <AddItem />
-    // <div>test</div>
-  )
-}
+    <>
+      <AddItem />
+      <TeaList />
+    </>
+  );
+};
 
 export default Dashboard;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import UploadIcon from "../../resources/icons/image-upload-icon.svg";
-import { imageUploadService } from "../../services/imageUpload.service";
+import { imageUploadService } from "../../services/tea.service";
 import errorMessages from "../../constant/error";
 import { checkSupportedFormat } from "../../utils";
 import { uploadedImageSize, imageTypes } from "../../constant/fileUpload";
@@ -51,7 +51,7 @@ class ImageUpload extends Component {
       const imgUrl = URL.createObjectURL(imageFile);
       const tempImg = new Image();
       const formData = new FormData();
-      formData.append("file", imageFile);
+      formData.append("image", imageFile);
       this.setState({ isFileUploaded: false });
       this.imageUploadDetails(formData);
       tempImg.src = imgUrl;

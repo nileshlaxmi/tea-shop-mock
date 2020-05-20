@@ -8,8 +8,9 @@ import maxLength from "../../constant/maximum";
 import { toast } from "react-toastify";
 import errorMessages from "../../constant/error";
 import successMessages from "../../constant/success";
-import { addTeaItem } from "../../store/add/action";
+import { addTeaItem } from "../../store/tea/action";
 import ImageUpload from "../Image";
+import "./style.css";
 
 class AddItem extends Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class AddItem extends Component {
   render() {
     const { errors, url } = this.state;
     return (
-      <div>
+      <div className="add-item-container">
         <p>Add Item</p>
         <InputText
           label="Name"
@@ -105,7 +106,9 @@ class AddItem extends Component {
             />
           </div>
         </div>
-        <ButtonBox type="submit" onClick={this.handleClick} />
+        <div>
+          <ButtonBox type="submit" onClick={this.handleClick} label="Add" />
+        </div>
       </div>
     );
   }
