@@ -55,7 +55,6 @@ export const getTea = (payload) => (dispatch) => {
   dispatch({ type: ActionTypes.GET_TEA });
   return getTeaService(payload)
     .then((response) => {
-      debugger
       dispatch({
         type: ActionTypes.GET_TEA_SUCCESS,
         payload: response,
