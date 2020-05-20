@@ -12,9 +12,9 @@ const TeaItem = ({ item, history }) => {
           <img src={item.url ? item.url : genericImg} alt={item.name} />
           <div className="container">
             <p>{item.name}</p>
-            <p>Price {item.price}</p>
-            <p className="description" title={item.description}>
-              Description {item.description}
+            <p>{item.price} Rs</p>
+            <p className="ellipsis" title={item.description}>
+              {item.description}
             </p>
           </div>
         </div>

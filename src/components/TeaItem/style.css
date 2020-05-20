@@ -17,8 +17,3 @@
   padding: 8px;
 }
 
-.description{
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
