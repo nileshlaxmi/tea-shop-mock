@@ -94,8 +94,9 @@ class AddItem extends Component {
           }}
           error={errors && errors["price"]}
         />
-        <div className="general">
+        <div className="xav-form__page-property-block">
           <div className="box-padding">
+          <div className="xav-form__label-field">Image</div>
             <ImageUpload
               isDisabled="Yes"
               type="image"
@@ -106,7 +107,7 @@ class AddItem extends Component {
             />
           </div>
         </div>
-        <div>
+        <div className="add-tea-btn">
           <ButtonBox type="submit" onClick={this.handleClick} label="Add" />
         </div>
       </div>

@@ -1,0 +1,33 @@
+.tea-outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.tea-inner-container {
+  display: flex;
+  height: 202px;
+  width: 502px;
+  box-shadow: 0 8px 5px 1px #888888;
+}
+
+.tea-text {
+  width: 50%;
+}
+
+.tea-text img {
+  height: 16px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.desc {
+  padding: 0px 12px;
+}
+
+.item {
+  padding: 9px;
+  margin: 5px;
+  box-shadow: 0 1px 4px 1px #888885;
+}

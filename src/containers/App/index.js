@@ -30,7 +30,7 @@ function App() {
         />
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route exact path="/tea-item" component={ViewTea} />
+          <Route exact path="/tea-item/:uid" component={ViewTea} />
           <Redirect to="/" />
         </Switch>
       </div>

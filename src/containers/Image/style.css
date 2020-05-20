@@ -1,0 +1,40 @@
+.general{
+  margin-bottom: 8px;
+}
+
+.fileupload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+}
+.fileupload-btn-wrapper .label {
+  color: #2a2c2e;
+  line-height: 18px;
+}
+.fileupload-btn-wrapper button {
+  box-sizing: border-box;
+  height: 32px;
+  width: 100%;
+  border: 1px solid green;
+  border-radius: 4px;
+  color: green;
+  background-color: white;
+  padding: 7px;
+  font-size: 12px;
+  letter-spacing: 0.34px;
+  line-height: 14px;
+}
+.fileupload-btn-wrapper input[type='file'], .fileupload-btn-wrapper input[type='button'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+.fileupload-btn-wrapper .fileupload-text {
+  font-size: 13px;
+}

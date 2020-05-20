@@ -40,3 +40,16 @@ export const imageUploadService = file => {
       return errorHandler(error);
     });
 };
+
+export const getTeaService = (id) => {
+  return axios
+    .get(endpoint.getTea(id))
+    .then(response => {
+      return successHandler(response).then((data) => {
+        return data;
+      });
+    })
+    .catch(error => {
+      return errorHandler(error);
+    });
+};

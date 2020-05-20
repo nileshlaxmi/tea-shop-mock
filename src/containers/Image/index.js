@@ -111,6 +111,9 @@ class ImageUpload extends Component {
         return (
           <div className="image-upload-wrapper">
             <img src={UploadIcon} alt="" />
+            <div className="label">
+              {fileUrl ? "Edit Image" : "Upload Image"}
+            </div>
           </div>
         );
 
@@ -129,15 +132,14 @@ class ImageUpload extends Component {
   };
 
   render() {
-    const { isDisabled, type, fileUrl = "" } = this.props;
-    const inputType = type === "fileUpload" && !isDisabled ? "button" : "file";
+    const { type, fileUrl = "" } = this.props;
 
     return (
       <div className="fileupload-btn-wrapper">
         {this.showUploadIcon(type, fileUrl)}
         <input
           className="file-upload-input"
-          type={inputType}
+          type='file'
           title={fileUrl ? "File Uploaded" : "No file selected"}
           name="myfile"
           accept={this.supportedType}

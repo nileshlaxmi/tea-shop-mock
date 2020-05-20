@@ -8,3 +8,11 @@
   border-radius: 5px;
   padding: 12px;
 }
+
+.add-tea-btn{
+  position: relative;
+}
+
+.add-tea-btn button{
+  width: 150px;
+}

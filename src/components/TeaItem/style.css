@@ -13,6 +13,12 @@
 }
 
 .tea-item .container {
-  text-align: center;
-  padding: 5px;
+  text-align: left;
+  padding: 8px;
+}
+
+.description{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

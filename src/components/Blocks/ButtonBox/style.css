@@ -6,6 +6,9 @@
   letter-spacing: 0.3px;
   line-height: 20px;
   font-size: 14px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
 .xav-form__btn-group {
   text-align: right;

@@ -8,6 +8,7 @@ const initialState = {
   url: "",
   listTeaAr: [],
   error: "",
+  teaObject: {}
 };
 
 const AddTeaReducer = (state = initialState, action) => {
@@ -42,7 +43,8 @@ const AddTeaReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        listTeaAr: action.payload,
+        listTeaAr: action.payload && action.payload.items,
+        itemCount: action.payload && action.payload.counter,
       };
     case ActionTypes.LIST_TEA_ERROR:
       return {
@@ -50,7 +52,23 @@ const AddTeaReducer = (state = initialState, action) => {
         isFetching: false,
         error: action.payload,
       };
-
+    case ActionTypes.GET_TEA:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case ActionTypes.GET_TEA_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        teaObject: action.payload && action.payload.item,
+      };
+    case ActionTypes.GET_TEA_ERROR:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload,
+      };
     default:
       return state;
   }

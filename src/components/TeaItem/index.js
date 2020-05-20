@@ -4,19 +4,22 @@ import genericImg from "../../resources/images/images.png";
 import { withRouter } from "react-router-dom";
 
 const TeaItem = ({ item, history }) => {
+  const {uid} = item;
   return (
-    <div className="tea-item" onClick={() => history.push('/tea-item')}>
-      {item && (
+    item && (
+      <div className="tea-item" onClick={() => history.push(`/tea-item/${uid}`)}>
         <div className="img-card">
           <img src={item.url ? item.url : genericImg} alt={item.name} />
           <div className="container">
             <p>{item.name}</p>
             <p>Price {item.price}</p>
-            <p>Description {item.description}</p>
+            <p className="description" title={item.description}>
+              Description {item.description}
+            </p>
           </div>
         </div>
-      )}
-    </div>
+      </div>
+    )
   );
 };
 
