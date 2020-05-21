@@ -3,4 +3,5 @@ export default {
   addTea: () => '/items',
   imageUpload: () => '/upload-image',
   getTea: id => `/item/${id}`,
+  deleteTea: id => `/item/${id}`,
 }

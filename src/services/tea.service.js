@@ -53,3 +53,16 @@ export const getTeaService = (id) => {
       return errorHandler(error);
     });
 };
+
+export const deleteTeaService = (id) => {
+  return axios
+    .delete(endpoint.deleteTea(id))
+    .then(response => {
+      return successHandler(response).then((data) => {
+        return data;
+      });
+    })
+    .catch(error => {
+      return errorHandler(error);
+    });
+};

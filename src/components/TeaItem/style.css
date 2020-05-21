@@ -1,7 +1,11 @@
-.tea-item .img-card {
+.tea-item{
   width: 200px;
   height: 300px;
-  /* border: 1px solid gray; */
+  padding: 8px;
+  margin: 12px;
+}
+
+.tea-item .img-card {
   box-shadow: 0 8px 5px 1px #888888;
   margin-bottom: 15px;
   border-radius: 5px;
@@ -15,5 +19,24 @@
 .tea-item .container {
   text-align: left;
   padding: 8px;
+  position: relative;
 }
 
+.description{
+  padding-bottom: 8px;
+}
+
+.options{
+  text-align: left;
+  padding: 8px;
+  position: absolute;
+  bottom: 0px;
+  left: 30%;
+}
+
+.options img{
+  height: 20px;
+  width: 20px;
+  padding-right: 4px;
+  cursor: pointer;
+}

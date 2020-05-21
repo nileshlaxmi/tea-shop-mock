@@ -1,12 +1,16 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { listTea } from "../../store/tea/action";
+import { listTea, deleteTea } from "../../store/tea/action";
 import TeaItem from "../../components/TeaItem";
 import "./style.css";
 
 class TeaList extends Component {
   componentDidMount() {
     this.props.listTea();
+  }
+
+  deleteTea = (uid) => {
+    this.props.deleteTea(uid);
   }
 
   render() {
@@ -17,7 +21,7 @@ class TeaList extends Component {
           listTeaAr.map((item, index) => {
             return (
               <Fragment key={index}>
-                <TeaItem item={item} />
+                <TeaItem item={item} deleteTea={this.deleteTea}/>
               </Fragment>
             );
           })}
@@ -34,6 +38,7 @@ const mapStateToProps = (state) => {
 
 const mapDisPatchToProps = {
   listTea,
+  deleteTea
 };
 
 export default connect(mapStateToProps, mapDisPatchToProps)(TeaList);

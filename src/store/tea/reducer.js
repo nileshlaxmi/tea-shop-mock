@@ -8,7 +8,7 @@ const initialState = {
   url: "",
   listTeaAr: [],
   error: "",
-  teaObject: {}
+  teaObject: {},
 };
 
 const AddTeaReducer = (state = initialState, action) => {
@@ -64,6 +64,22 @@ const AddTeaReducer = (state = initialState, action) => {
         teaObject: action.payload && action.payload.item,
       };
     case ActionTypes.GET_TEA_ERROR:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload,
+      };
+    case ActionTypes.DELETE_TEA:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case ActionTypes.DELETE_TEA_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+      };
+    case ActionTypes.DELETE_TEA_ERROR:
       return {
         ...state,
         isFetching: false,

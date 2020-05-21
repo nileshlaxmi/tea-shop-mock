@@ -1,4 +1,4 @@
-import { addItemService, listTeaService, getTeaService } from "../../services/tea.service";
+import { addItemService, listTeaService, getTeaService, deleteTeaService } from "../../services/tea.service";
 import { errHandler } from "../../services";
 
 const MODULE_NAME = "[TEA]";
@@ -13,6 +13,9 @@ export const ActionTypes = {
   GET_TEA: `${MODULE_NAME} GET TEA`,
   GET_TEA_ERROR: `${MODULE_NAME} GET TEA ERROR`,
   GET_TEA_SUCCESS: `${MODULE_NAME} GET TEA SUCCESS`,
+  DELETE_TEA: `${MODULE_NAME} DELETE TEA`,
+  DELETE_TEA_ERROR: `${MODULE_NAME} DELETE TEA ERROR`,
+  DELETE_TEA_SUCCESS: `${MODULE_NAME} DELETE TEA SUCCESS`,
 };
 
 export const addTeaItem = (payload) => (dispatch) => {
@@ -57,13 +60,31 @@ export const getTea = (payload) => (dispatch) => {
     .then((response) => {
       dispatch({
         type: ActionTypes.GET_TEA_SUCCESS,
-        payload: response,
       });
       return response;
     })
     .catch((error) => {
       dispatch({
         type: ActionTypes.GET_TEA_ERROR,
+        payload: error,
+      });
+      errHandler(error);
+    });
+};
+
+export const deleteTea = (payload) => (dispatch) => {
+  dispatch({ type: ActionTypes.DELETE_TEA });
+  return deleteTeaService(payload)
+    .then((response) => {
+      dispatch({
+        type: ActionTypes.DELETE_TEA_SUCCESS,
+      });
+      listTea();
+      return response;
+    })
+    .catch((error) => {
+      dispatch({
+        type: ActionTypes.DELETE_TEA_ERROR,
         payload: error,
       });
       errHandler(error);
