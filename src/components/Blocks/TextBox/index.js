@@ -20,6 +20,15 @@ class TextBox extends Component {
     };
   }
 
+  static getDerivedStateFromProps = (props, state) => {
+    if (props.value !== state.value) {
+      return {
+        value: props.value,
+      };
+    }
+    return null;
+  };
+
   onChange = (event) => {
     const {target} = event;
     const {value} = target;

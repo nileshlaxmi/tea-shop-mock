@@ -19,9 +19,18 @@ class InputText extends Component {
     };
   }
 
+  static getDerivedStateFromProps = (props, state) => {
+    if (props.value !== state.value) {
+      return {
+        value: props.value,
+      };
+    }
+    return null;
+  };
+
   onChange = (event) => {
-    const {target} = event;
-    const {value} = target;
+    const { target } = event;
+    const { value } = target;
     this.setState({ value }, () => {
       this.props.onChange({ [this.props._key]: value });
     });

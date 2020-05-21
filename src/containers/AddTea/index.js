@@ -52,20 +52,19 @@ class AddItem extends Component {
       if (Object.keys(errors).length > 0) toast.error(errorMessages.resolve);
       else {
         this.props.addTeaItem(_state);
-        toast.success(successMessages.item);
         this.setState({
           name: "",
           description: "",
           price: "",
           url: "",
         });
-        this.props.listTea();
       }
     }
   };
 
   render() {
     const { errors, url, name, price, description } = this.state;
+    console.log("name", name, " price", price, " description", description);
     return (
       <div className="add-item-container">
         <p>Add Item</p>
