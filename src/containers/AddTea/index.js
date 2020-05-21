@@ -58,6 +58,7 @@ class AddItem extends Component {
           price: "",
           url: "",
         });
+        this.props.listTea();
       }
     }
   };

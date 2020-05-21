@@ -18,10 +18,10 @@ const TeaItem = ({ item, history, deleteTea }) => {
           />
           <div className="container">
             <p>{item.name}</p>
-            <p>{item.price} Rs</p>
-            <p className="description ellipsis" title={item.description}>
+            <p>Rs {item.price}</p>
+            {/* <p className="description ellipsis" title={item.description}>
               {item.description}
-            </p>
+            </p> */}
             <div className="options">
               {/* <img src={addImg} alt="Add" /> */}
               <img

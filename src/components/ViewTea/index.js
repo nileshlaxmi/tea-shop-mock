@@ -26,7 +26,7 @@ class ViewTea extends Component {
             <img src={backBtn} onClick={() => history.push("/")} alt='back'/>
             <div className="desc">
               <div className="item"><label>Name : </label>{teaObject.name}</div>
-              <div className="item"><label>Price : </label>{teaObject.price}</div>
+              <div className="item"><label>Price : </label>Rs {teaObject.price}</div>
               <div className="item ellipsis" title={teaObject.description}><label>Description : </label>{teaObject.description}</div>
             </div>
           </div>
