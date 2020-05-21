@@ -32,8 +32,8 @@ export const imageUploadService = file => {
   return axios
     .post(endpoint.imageUpload(), file)
     .then(response => {
-      return successHandler(response).then(({ result }) => {
-        return result;
+      return successHandler(response).then((data) => {
+        return data;
       });
     })
     .catch(error => {

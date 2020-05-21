@@ -23,7 +23,7 @@ class ViewTea extends Component {
       <div className="tea-outer-container">
         <div className="tea-inner-container">
           <div className="tea-text">
-            <img src={backBtn} onClick={() => history.push("/")} />
+            <img src={backBtn} onClick={() => history.push("/")} alt='back'/>
             <div className="desc">
               <div className="item"><label>Name : </label>{teaObject.name}</div>
               <div className="item"><label>Price : </label>{teaObject.price}</div>
@@ -31,7 +31,7 @@ class ViewTea extends Component {
             </div>
           </div>
           <div className="tea-image">
-            <img src={teaObject.url ? teaObject.url : genericImg} />
+            <img src={teaObject.url ? teaObject.url : genericImg} alt='tea' />
           </div>
         </div>
       </div>

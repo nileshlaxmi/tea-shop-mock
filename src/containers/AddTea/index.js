@@ -8,7 +8,7 @@ import maxLength from "../../constant/maximum";
 import { toast } from "react-toastify";
 import errorMessages from "../../constant/error";
 import successMessages from "../../constant/success";
-import { addTeaItem } from "../../store/tea/action";
+import { addTeaItem, listTea } from "../../store/tea/action";
 import ImageUpload from "../Image";
 import "./style.css";
 
@@ -59,6 +59,7 @@ class AddItem extends Component {
           price: "",
           url: "",
         });
+        this.props.listTea();
       }
     }
   };
@@ -117,6 +118,7 @@ class AddItem extends Component {
 
 const mapDisPatchToProps = {
   addTeaItem,
+  listTea
 };
 
 export default connect(null, mapDisPatchToProps)(AddItem);

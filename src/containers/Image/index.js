@@ -20,7 +20,7 @@ class ImageUpload extends Component {
     imageUploadService(formData)
       .then((response) => {
         if (response) {
-          this.props.getFile(response.url);
+          this.props.getFile(response.link);
           this.setState({ isFileUploaded: true });
         }
       })
