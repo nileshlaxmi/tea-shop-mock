@@ -65,13 +65,14 @@ class AddItem extends Component {
   };
 
   render() {
-    const { errors, url } = this.state;
+    const { errors, url, name, price, description } = this.state;
     return (
       <div className="add-item-container">
         <p>Add Item</p>
         <InputText
           label="Name"
           property="name"
+          value={name}
           onChange={({ value }) => {
             this.handleChange("name", value);
           }}
@@ -81,6 +82,7 @@ class AddItem extends Component {
         <TextBox
           label="Description"
           property="description"
+          value={description}
           onChange={({ value }) => {
             this.handleChange("description", value);
           }}
@@ -90,6 +92,7 @@ class AddItem extends Component {
         <InputText
           label="Price"
           property="price"
+          value={price}
           onChange={({ value }) => {
             this.handleChange("price", value);
           }}
@@ -97,7 +100,7 @@ class AddItem extends Component {
         />
         <div className="xav-form__page-property-block">
           <div className="box-padding">
-          <div className="xav-form__label-field">Image</div>
+          <div className="xav-form__label-field">Upload Image</div>
             <ImageUpload
               isDisabled="Yes"
               type="image"

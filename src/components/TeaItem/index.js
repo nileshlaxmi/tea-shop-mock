@@ -23,7 +23,7 @@ const TeaItem = ({ item, history, deleteTea }) => {
               {item.description}
             </p>
             <div className="options">
-              <img src={addImg} alt="Add" />
+              {/* <img src={addImg} alt="Add" /> */}
               <img
                 src={deleteImg}
                 alt="Delete"

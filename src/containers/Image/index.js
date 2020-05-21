@@ -105,41 +105,23 @@ class ImageUpload extends Component {
     }
   };
 
-  showUploadIcon = (type, fileUrl) => {
-    switch (type) {
-      case "image":
-        return (
-          <div className="image-upload-wrapper">
-            <img src={UploadIcon} alt="" />
-            <div className="label">
-              {fileUrl ? "Edit Image" : "Upload Image"}
-            </div>
-          </div>
-        );
-
-      default:
-        return (
-          <>
-            <div className="choice-icon-wrap">
-              <img src={fileUrl} alt="" />
-            </div>
-            <div className="label">
-              {fileUrl ? "Edit Image" : "Upload Image"}
-            </div>
-          </>
-        );
-    }
+  showUploadIcon = () => {
+    return (
+      <div className="image-upload-wrapper">
+        <img src={UploadIcon} alt="" />
+      </div>
+    );
   };
 
   render() {
-    const { type, fileUrl = "" } = this.props;
+    const { fileUrl = "" } = this.props;
 
     return (
       <div className="fileupload-btn-wrapper">
-        {this.showUploadIcon(type, fileUrl)}
+        {this.showUploadIcon()}
         <input
           className="file-upload-input"
-          type='file'
+          type="file"
           title={fileUrl ? "File Uploaded" : "No file selected"}
           name="myfile"
           accept={this.supportedType}

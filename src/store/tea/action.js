@@ -1,5 +1,11 @@
-import { addItemService, listTeaService, getTeaService, deleteTeaService } from "../../services/tea.service";
+import {
+  addItemService,
+  listTeaService,
+  getTeaService,
+  deleteTeaService,
+} from "../../services/tea.service";
 import { errHandler } from "../../services";
+import store from '../index';
 
 const MODULE_NAME = "[TEA]";
 
@@ -18,25 +24,6 @@ export const ActionTypes = {
   DELETE_TEA_SUCCESS: `${MODULE_NAME} DELETE TEA SUCCESS`,
 };
 
-export const addTeaItem = (payload) => (dispatch) => {
-  dispatch({ type: ActionTypes.ADD_ITEM });
-  return addItemService(payload)
-    .then((response) => {
-      dispatch({
-        type: ActionTypes.ADD_ITEM_SUCCESS,
-        payload: response,
-      });
-      return response;
-    })
-    .catch((error) => {
-      dispatch({
-        type: ActionTypes.ADD_ITEM_ERROR,
-        payload: error,
-      });
-      errHandler(error);
-    });
-};
-
 export const listTea = () => (dispatch) => {
   dispatch({ type: ActionTypes.LIST_TEA });
   return listTeaService()
@@ -49,8 +36,29 @@ export const listTea = () => (dispatch) => {
     .catch((error) => {
       dispatch({
         type: ActionTypes.LIST_TEA_ERROR,
-        payload: 'error',
+        payload: "error",
       });
+    });
+};
+
+export const addTeaItem = (payload) => (dispatch) => {
+  dispatch({ type: ActionTypes.ADD_ITEM });
+  return addItemService(payload)
+    .then((response) => {
+      dispatch({
+        type: ActionTypes.ADD_ITEM_SUCCESS,
+        payload: response,
+      });
+      store.dispatch(listTea());
+      return response;
+    })
+
+    .catch((error) => {
+      dispatch({
+        type: ActionTypes.ADD_ITEM_ERROR,
+        payload: error,
+      });
+      errHandler(error);
     });
 };
 
@@ -60,6 +68,7 @@ export const getTea = (payload) => (dispatch) => {
     .then((response) => {
       dispatch({
         type: ActionTypes.GET_TEA_SUCCESS,
+        payload: response,
       });
       return response;
     })
@@ -79,7 +88,7 @@ export const deleteTea = (payload) => (dispatch) => {
       dispatch({
         type: ActionTypes.DELETE_TEA_SUCCESS,
       });
-      listTea();
+      store.dispatch(listTea());
       return response;
     })
     .catch((error) => {
